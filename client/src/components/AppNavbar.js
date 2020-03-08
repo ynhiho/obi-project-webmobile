@@ -33,34 +33,34 @@ class AppNavbar extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto nav-fill w-100" navbar>
                 <NavItem>
-                  <NavLink href="/">Bauen</NavLink>
+                  <NavLink href="/products">Bauen</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Garten und Freizeit</NavLink>
+                  <NavLink href="/products">Garten und Freizeit</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Technik</NavLink>
+                  <NavLink href="/products">Technik</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Wohnen</NavLink>
+                  <NavLink href="/products">Wohnen</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Küche</NavLink>
+                  <NavLink href="/products">Küche</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Bad</NavLink>
+                  <NavLink href="/products">Bad</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Gartenplaner</NavLink>
+                  <NavLink href="/products">Gartenplaner</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Badplaner</NavLink>
+                  <NavLink href="/products">Badplaner</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Magazin</NavLink>
+                  <NavLink href="/products">Magazin</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">Angebote</NavLink>
+                  <NavLink href="/products">Angebote</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

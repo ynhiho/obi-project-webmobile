@@ -15,7 +15,12 @@ function App() {
     <div className="App">
       <TopBar />
       <AppNavbar />
-      <ProductDisplayPage />
+      <Router>
+        <div>
+          <Route exact path="/" component={CategoryPage} />
+          <Route exact path="/products" component={ProductDisplayPage} />
+        </div>
+      </Router>
     </div>
   );
 }
