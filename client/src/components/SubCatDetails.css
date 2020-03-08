@@ -2,8 +2,8 @@
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 140px;
   border-style: inset;
   border-width: 1px;
 }
@@ -21,7 +21,7 @@
   font-weight: bold;
 }
 
-li:nth-child(4) {
+.list-subcat > li:nth-child(4) {
   color: #ff7e21;
   font-weight: bold;
 }

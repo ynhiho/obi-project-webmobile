@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import "./SubCatDetails.css";
 
 class SubCatDetails extends Component {
@@ -17,7 +17,9 @@ class SubCatDetails extends Component {
               <li>Mehr anzeigen ></li>
             </ul>
           </Col>
-          <Col>Pic</Col>
+          <Col>
+            <Image src="/pics/placeholder-furniture.jpg" />
+          </Col>
         </Row>
       </Container>
     );

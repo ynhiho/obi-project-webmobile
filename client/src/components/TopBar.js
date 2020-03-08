@@ -32,7 +32,7 @@ class TopBar extends Component {
     return (
       <div>
         <Navbar className="topbar" expand="md">
-          <Container className="justify-content-between">
+          <Container className="justify-content-between p-0">
             <Col className="col-md-2">
               <NavbarBrand className="logo text-center" href="/">
                 OBI
