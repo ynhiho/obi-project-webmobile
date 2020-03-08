@@ -26,7 +26,7 @@ class AppNavbar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar-categories">
         <Navbar color="light" light expand="md">
           <Container>
             <NavbarToggler onClick={this.toggle} />
