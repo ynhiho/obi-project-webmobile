@@ -1,0 +1,26 @@
+.star-rating > .star {
+  width: 10%;
+  height: 10%;
+}
+
+.title-product {
+  font-weight: bold;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.star-number {
+  margin-left: 8px;
+}
+
+.small-text {
+  font-size: 0.7rem;
+}
+
+.text-merken {
+  position: absolute;
+  right: 10px;
+}

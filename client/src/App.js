@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import AppNavbar from "./components/AppNavbar";
 import TopBar from "./components/TopBar";
-import ProductList from "./components/ProductList";
-import SubCatGroup from "./components/SubCatGroup";
+import CategoryPage from "./components/CategoryPage";
+import ProductDisplayPage from "./components/ProductDisplayPage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -13,14 +15,7 @@ function App() {
     <div className="App">
       <TopBar />
       <AppNavbar />
-      <Row>
-        <Col className="col-md-3">
-          <ProductList />
-        </Col>
-        <Col className="col-md-9 pl-0">
-          <SubCatGroup />
-        </Col>
-      </Row>
+      <ProductDisplayPage />
     </div>
   );
 }
