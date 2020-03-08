@@ -35,16 +35,6 @@ class ProductList extends Component {
         <li>Morbi leo risus</li>
         <li>Porta ac consectetur ac</li>
         <li>Vestibulum at eros</li>
-        <li>Cras justo odio</li>
-        <li>Dapibus ac facilisis in</li>
-        <li>Morbi leo risus</li>
-        <li>Porta ac consectetur ac</li>
-        <li>Vestibulum at eros</li>
-        <li>Cras justo odio</li>
-        <li>Dapibus ac facilisis in</li>
-        <li>Morbi leo risus</li>
-        <li>Porta ac consectetur ac</li>
-        <li>Vestibulum at eros</li>
       </ul>
     );
   }

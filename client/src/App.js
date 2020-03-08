@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import AppNavbar from "./components/AppNavbar";
 import TopBar from "./components/TopBar";
 import ProductList from "./components/ProductList";
+import SubCatDetails from "./components/SubCatDetails";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -15,6 +16,9 @@ function App() {
       <Row>
         <Col className="col-md-3">
           <ProductList />
+        </Col>
+        <Col className="col-md-9">
+          <SubCatDetails />
         </Col>
       </Row>
     </div>
