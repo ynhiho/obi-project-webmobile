@@ -50,11 +50,11 @@ class TopBar extends Component {
               <Nav className="mr-auto nav-fill w-100" navbar>
                 <NavItem>
                   <Row>
-                    <Col className="location-icon col-md-2">
+                    <Col className="icon-topbar col-md-2">
                       <Image src="/icons/location.png" />
                     </Col>
-                    <Col className="location-icon col-md-10 pl-0">
-                      <NavLink href="/" className="pl-0">
+                    <Col className="icon-topbar col-md-10 pl-0">
+                      <NavLink href="/" className="pl-0 pt-0">
                         <p className="paragraph text-title-topbar">
                           Marktfiner
                         </p>
@@ -64,10 +64,17 @@ class TopBar extends Component {
                   </Row>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">
-                    <p className="paragraph text-title-topbar">Warenkorb</p>
-                    <p className="paragraph">0 Artikel, 0,00 €</p>
-                  </NavLink>
+                  <Row>
+                    <Col className="col-md-2 pl-0 icon-topbar">
+                      <Image src="/icons/shopping_car.png" />
+                    </Col>
+                    <Col className=" col-md-10 pl-0">
+                      <NavLink href="/" className="pl-0 pt-0">
+                        <p className="paragraph text-title-topbar">Warenkorb</p>
+                        <p className="paragraph">0 Artikel, 0,00 €</p>
+                      </NavLink>
+                    </Col>
+                  </Row>
                 </NavItem>
               </Nav>
             </Col>
