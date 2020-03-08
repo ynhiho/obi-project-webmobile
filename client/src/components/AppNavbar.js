@@ -29,17 +29,38 @@ class AppNavbar extends Component {
       <div>
         <Navbar color="light" light expand="md">
           <Container>
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="mr-auto" navbar>
+              <Nav className="mr-auto nav-fill w-100" navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink href="/">Bauen</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">
-                    GitHub
-                  </NavLink>
+                  <NavLink href="/">Garten und Freizeit</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Technik</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Wohnen</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Küche</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Bad</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Gartenplaner</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Badplaner</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Magazin</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Angebote</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

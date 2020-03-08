@@ -1,0 +1,34 @@
+.topbar.navbar {
+  background-color: #ff7e21;
+  height: 82px;
+  padding-top: 0px;
+}
+
+.logo.navbar-brand {
+  background-color: white;
+  height: 70px;
+  width: 140px;
+  padding-top: 0px;
+  color: #ff7e21;
+  font-size: 3rem;
+}
+
+.paragraph {
+  margin-bottom: 0px;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.input-field {
+  width: 100px;
+}
+
+.location-icon.col {
+  padding: 0px;
+  width: 40px;
+}
+
+.text-title-topbar {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
