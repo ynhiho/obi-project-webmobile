@@ -37,10 +37,10 @@ class Product extends Component {
           />
           <CardBody className="pt-2">
             <Row className="justify-content-between mb-2">
-              <Col className="pl-0 pr-0">
+              <Col>
                 <span className="small-text">Vergleichen</span>
               </Col>
-              <Col className="pl-0 pr-0">
+              <Col>
                 <span className="small-text text-merken">Merken</span>
               </Col>
             </Row>
