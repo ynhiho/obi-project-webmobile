@@ -24,3 +24,8 @@
   position: absolute;
   right: 10px;
 }
+
+.availability-text {
+  font-size: 0.7rem;
+  /* color: #069e25; */
+}

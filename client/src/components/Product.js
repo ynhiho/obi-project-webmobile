@@ -15,6 +15,20 @@ class Product extends Component {
     return (
       <div>
         <Card>
+          <Row className="justify-content-between mb-2">
+            <Col className="ml-4 mt-2">
+              <Row>
+                <Image src="/icons/truck.png" />
+                <span className="availability-text ml-1">Bestellbar</span>
+              </Row>
+            </Col>
+            <Col className="mr-3 mt-2">
+              <Row>
+                <Image src="/icons/pin.png" />
+                <span className="availability-text">Im Markt verfügbar</span>
+              </Row>
+            </Col>
+          </Row>
           <CardImg
             top
             width="100%"
@@ -23,10 +37,10 @@ class Product extends Component {
           />
           <CardBody className="pt-2">
             <Row className="justify-content-between mb-2">
-              <Col>
+              <Col className="pl-0 pr-0">
                 <span className="small-text">Vergleichen</span>
               </Col>
-              <Col>
+              <Col className="pl-0 pr-0">
                 <span className="small-text text-merken">Merken</span>
               </Col>
             </Row>
