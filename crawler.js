@@ -1,5 +1,6 @@
 var Crawler = require("crawler");
-let categories = [];
+
+/*************************** SubCategories ***************************/
 
 var c = new Crawler({
   maxConnections: 10,
@@ -10,6 +11,7 @@ var c = new Crawler({
     } else {
       var $ = res.$;
 
+      let categories = [];
       categories = setCategories($, categories);
 
       // console.log(categories);
@@ -60,6 +62,8 @@ function setCategories($, categories) {
 // Queue a list of URLs
 c.queue(["https://www.obi.de/"]);
 
+/*************************** SubCategories ***************************/
+
 var c2 = new Crawler({
   maxConnections: 10,
   // This will be called for each crawled page
@@ -68,12 +72,19 @@ var c2 = new Crawler({
       console.log(error);
     } else {
       var $ = res.$;
-      let subcategories = { parentCategory: "", subcats: [] };
+      let subcategories = {
+        parentCategory: "",
+        subcats: []
+      };
 
       subcategories.subcats = setSubCategories($);
       subcategories.parentCategory = getParentCategory($);
 
-      console.log(subcategories);
+      subcategories.subcats.map(subcategory => {
+        c3.queue(subcategory.url);
+      });
+
+      /* console.log(subcategories); */
     }
     done();
   }
@@ -84,8 +95,13 @@ function setSubCategories($) {
   $(".first-level li a").each(function(i, element) {
     const $element = $(element);
     if ($element.attr("wt_name") === "assortment_menu.level2") {
-      let subCategoryName = $element.text();
-      helper.push(subCategoryName);
+      const subCategoryName = $element.text();
+      const subCategoryUrl = $element.attr("href");
+      const subCategory = {
+        name: subCategoryName,
+        url: subCategoryUrl
+      };
+      helper.push(subCategory);
     }
   });
   return helper;
@@ -94,3 +110,49 @@ function setSubCategories($) {
 function getParentCategory($) {
   return $("h1").text();
 }
+
+/*************************** SubSubCategories ***************************/
+
+var c3 = new Crawler({
+  maxConnections: 10,
+  // This will be called for each crawled page
+  callback: function(error, res, done) {
+    if (error) {
+      console.log(error);
+    } else {
+      var $ = res.$;
+      let subsubcategories = {
+        parentCategory: "",
+        subsubcats: []
+      };
+
+      subsubcategories.subsubcats = setSubCategories($);
+      subsubcategories.parentCategory = getParentCategory($);
+
+      console.log(subsubcategories);
+    }
+    done();
+  }
+});
+
+/* function setSubCategories($) {
+  let helper = [];
+  $(".first-level li a").each(function(i, element) {
+    const $element = $(element);
+    if ($element.attr("wt_name") === "assortment_menu.level2") {
+      const subCategoryName = $element.text();
+      const subCategoryUrl = $element.attr("href");
+      const subCategory = {
+        name: subCategoryName,
+        url: subCategoryUrl
+      };
+      helper.push(subCategory);
+    }
+  });
+  return helper;
+}
+
+function getParentCategory($) {
+  return $("h1").text();
+}
+ */
