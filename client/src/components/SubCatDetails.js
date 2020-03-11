@@ -6,7 +6,7 @@ class SubCatDetails extends Component {
   render() {
     return (
       <Container className="container-details">
-        <h5 className="title-subcat">SubCat1</h5>
+        <h5 className="title-subcat">{this.props.subcategoryName}</h5>
         <hr className="horizontal-line" />
         <Row>
           <Col>

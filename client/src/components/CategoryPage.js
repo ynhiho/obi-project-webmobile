@@ -11,7 +11,7 @@ class CategoryPage extends Component {
           <ProductList clickedCategory={this.props.category} />
         </Col>
         <Col className="col-md-9 pl-0">
-          <SubCatGroup />
+          <SubCatGroup clickedCategory={this.props.category} />
         </Col>
       </Row>
     );
