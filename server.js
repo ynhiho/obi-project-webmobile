@@ -3,9 +3,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const urls = require("./routes/api/urls");
 
-/* const crawler = require("./crawler");
-console.log(crawler.crawlTest()); */
-
 const app = express();
 
 //Bodyparser Middleware

@@ -14,8 +14,17 @@ class AppNavbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      categories: []
     };
+  }
+
+  UNSAFE_componentWillMount() {
+    fetch("/api/urls")
+      .then(res => res.json())
+      .then(categoriesFromDB => {
+        this.setState({ categories: categoriesFromDB });
+      });
   }
 
   toggle = () => {
@@ -25,6 +34,7 @@ class AppNavbar extends Component {
   };
 
   render() {
+    console.log(this.state.categories);
     return (
       <div className="navbar-categories">
         <Navbar color="light" light expand="md">
@@ -32,24 +42,11 @@ class AppNavbar extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto nav-fill w-100" navbar>
-                <NavItem>
-                  <NavLink href="/products">Bauen</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/products">Garten und Freizeit</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/products">Technik</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/products">Wohnen</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/products">Küche</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="/products">Bad</NavLink>
-                </NavItem>
+                {this.state.categories.map(category => (
+                  <NavItem>
+                    <NavLink href="/products">{category.name}</NavLink>
+                  </NavItem>
+                ))}
                 <NavItem>
                   <NavLink href="/products">Gartenplaner</NavLink>
                 </NavItem>

@@ -72,19 +72,15 @@ var c2 = new Crawler({
       console.log(error);
     } else {
       var $ = res.$;
-      let subcategories = {
-        parentCategory: "",
-        subcats: []
-      };
+      let subcategories = {};
 
-      subcategories.subcats = setSubCategories($);
-      subcategories.parentCategory = getParentCategory($);
+      subcategories = setSubCategories($);
 
-      subcategories.subcats.map(subcategory => {
+      /* subcategories.subcats.map(subcategory => {
         c3.queue(subcategory.url);
-      });
+      }); */
 
-      /* console.log(subcategories); */
+      console.log(subcategories);
     }
     done();
   }
@@ -98,8 +94,11 @@ function setSubCategories($) {
       const subCategoryName = $element.text();
       const subCategoryUrl = $element.attr("href");
       const subCategory = {
-        name: subCategoryName,
-        url: subCategoryUrl
+        parentCategory: getParentCategory($),
+        subcats: {
+          name: subCategoryName,
+          url: subCategoryUrl
+        }
       };
       helper.push(subCategory);
     }
@@ -129,13 +128,14 @@ var c3 = new Crawler({
       subsubcategories.subsubcats = setSubCategories($);
       subsubcategories.parentCategory = getParentCategory($);
 
-      console.log(subsubcategories);
+      /* console.log(subsubcategories); */
     }
     done();
   }
 });
 
-/* function setSubCategories($) {
+/* 
+function setSubSubCategories($) {
   let helper = [];
   $(".first-level li a").each(function(i, element) {
     const $element = $(element);
@@ -152,7 +152,13 @@ var c3 = new Crawler({
   return helper;
 }
 
-function getParentCategory($) {
+function getSubParentCategory($) {
   return $("h1").text();
 }
  */
+
+module.exports = {
+  c,
+  c2,
+  c3
+};
