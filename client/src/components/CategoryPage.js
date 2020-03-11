@@ -8,7 +8,7 @@ class CategoryPage extends Component {
     return (
       <Row>
         <Col className="col-md-3">
-          <ProductList />
+          <ProductList clickedCategory={this.props.category} />
         </Col>
         <Col className="col-md-9 pl-0">
           <SubCatGroup />

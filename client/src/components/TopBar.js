@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "./TopBar.css";
 import { Row, Col, Image } from "react-bootstrap";
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,

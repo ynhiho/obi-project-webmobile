@@ -7,10 +7,13 @@ const Subcategories = require("../../models/Subcategories");
 const Subsubcategories = require("../../models/Subsubcategories");
 
 // @route GET api/urls
-// @desc Get All Urls
-// @access Public
 router.get("/", (req, res) => {
   Category.find().then(category => res.json(category));
+});
+
+// @route GET api/urls
+router.get("/subcategories", (req, res) => {
+  Subcategories.find().then(subcategory => res.json(subcategory));
 });
 
 // @route POST api/urls

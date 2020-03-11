@@ -33,8 +33,11 @@ class AppNavbar extends Component {
     });
   };
 
+  shareClickedCategory = categoryName => {
+    this.props.clickedCategory(categoryName);
+  };
+
   render() {
-    console.log(this.state.categories);
     return (
       <div className="navbar-categories">
         <Navbar color="light" light expand="md">
@@ -43,21 +46,23 @@ class AppNavbar extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto nav-fill w-100" navbar>
                 {this.state.categories.map(category => (
-                  <NavItem>
-                    <NavLink href="/products">{category.name}</NavLink>
+                  <NavItem
+                    onClick={() => this.shareClickedCategory(category.name)}
+                  >
+                    <NavLink>{category.name}</NavLink>
                   </NavItem>
                 ))}
                 <NavItem>
-                  <NavLink href="/products">Gartenplaner</NavLink>
+                  <NavLink>Gartenplaner</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/products">Badplaner</NavLink>
+                  <NavLink>Badplaner</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/products">Magazin</NavLink>
+                  <NavLink>Magazin</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/products">Angebote</NavLink>
+                  <NavLink>Angebote</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

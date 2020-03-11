@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+import { ButtonDropdown, DropdownToggle } from "reactstrap";
 import "./SortingBar.css";
 
 class SortingBar extends Component {
