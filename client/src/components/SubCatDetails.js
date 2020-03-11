@@ -36,13 +36,19 @@ class SubCatDetails extends Component {
           <Col>
             <ul className="list-subcat">
               <li>
-                {subcats[0] !== undefined ? subcats[0].subsubcat.name : ""}
+                <a href="/products">
+                  {subcats[0] !== undefined ? subcats[0].subsubcat.name : ""}
+                </a>
               </li>
               <li>
-                {subcats[0] !== undefined ? subcats[1].subsubcat.name : ""}
+                <a href="/products">
+                  {subcats[0] !== undefined ? subcats[1].subsubcat.name : ""}
+                </a>
               </li>
               <li>
-                {subcats[0] !== undefined ? subcats[2].subsubcat.name : ""}
+                <a href="/products">
+                  {subcats[0] !== undefined ? subcats[2].subsubcat.name : ""}
+                </a>
               </li>
               <li>Mehr anzeigen ></li>
             </ul>

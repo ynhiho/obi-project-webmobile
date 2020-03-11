@@ -29,3 +29,7 @@
 h5 {
   font-weight: bold;
 }
+
+.list-subcat > li a {
+  color: black;
+}

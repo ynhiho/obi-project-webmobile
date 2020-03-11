@@ -9,6 +9,7 @@ import {
   NavLink,
   Container
 } from "reactstrap";
+import "./AppNavbar.css";
 
 class AppNavbar extends Component {
   constructor(props) {
@@ -47,21 +48,22 @@ class AppNavbar extends Component {
               <Nav className="mr-auto nav-fill w-100" navbar>
                 {this.state.categories.map(category => (
                   <NavItem
+                    className="main-nav-items"
                     onClick={() => this.shareClickedCategory(category.name)}
                   >
                     <NavLink>{category.name}</NavLink>
                   </NavItem>
                 ))}
-                <NavItem>
+                <NavItem className="main-nav-items">
                   <NavLink>Gartenplaner</NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className="main-nav-items">
                   <NavLink>Badplaner</NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className="main-nav-items">
                   <NavLink>Magazin</NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem className="main-nav-items">
                   <NavLink>Angebote</NavLink>
                 </NavItem>
               </Nav>

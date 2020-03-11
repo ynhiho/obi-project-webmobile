@@ -23,17 +23,22 @@ class WholePage extends Component {
       <div>
         <TopBar />
         <AppNavbar clickedCategory={category => this.setCategory(category)} />
-        <CategoryPage category={this.state.category} />
-        {/* <Router>
+        <Router>
           <div>
-            <Route exact path="/" component={CategoryPage category={this.state.category}} />
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <CategoryPage {...props} category={this.state.category} />
+              )}
+            />
             <Route exact path="/products" component={ProductDisplayPage} />
           </div>
-          <div>
+          {/*           <div>
             <Route exact path="/" component={CategoryPage category={this.state.category}} />
             <Route exact path="/products" component={ProductDisplayPage} />
-          </div>
-        </Router> */}
+          </div> */}
+        </Router>
       </div>
     );
   }
