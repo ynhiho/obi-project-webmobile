@@ -76,11 +76,11 @@ var c2 = new Crawler({
 
       subcategories = setSubCategories($);
 
-      /* subcategories.subcats.map(subcategory => {
-        c3.queue(subcategory.url);
-      }); */
+      subcategories.map(subcategory => {
+        c3.queue(subcategory.subcats.url);
+      });
 
-      console.log(subcategories);
+      // console.log(subcategories);
     }
     done();
   }
@@ -125,37 +125,38 @@ var c3 = new Crawler({
         subsubcats: []
       };
 
-      subsubcategories.subsubcats = setSubCategories($);
+      subsubcategories.subsubcats = setSubSubCategories($);
       subsubcategories.parentCategory = getParentCategory($);
 
-      /* console.log(subsubcategories); */
+      console.log(subsubcategories);
     }
     done();
   }
 });
 
-/* 
 function setSubSubCategories($) {
   let helper = [];
   $(".first-level li a").each(function(i, element) {
     const $element = $(element);
-    if ($element.attr("wt_name") === "assortment_menu.level2") {
-      const subCategoryName = $element.text();
-      const subCategoryUrl = $element.attr("href");
-      const subCategory = {
-        name: subCategoryName,
-        url: subCategoryUrl
+    if (
+      $element.attr("wt_name") === "assortment_menu.level2" ||
+      $element.attr("wt_name") === "assortment_menu.level3"
+    ) {
+      const subsubCategoryName = $element.text();
+      const subsubCategoryUrl = $element.attr("href");
+      const subsubCategory = {
+        name: subsubCategoryName,
+        url: subsubCategoryUrl
       };
-      helper.push(subCategory);
+      helper.push(subsubCategory);
     }
   });
   return helper;
 }
 
-function getSubParentCategory($) {
+/* function getSubParentCategory($) {
   return $("h1").text();
-}
- */
+} */
 
 module.exports = {
   c,

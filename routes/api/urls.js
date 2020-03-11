@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+var Crawler = require("crawler");
 
 // URL Model
 const Category = require("../../models/Category");
@@ -14,6 +15,13 @@ router.get("/", (req, res) => {
 // @route GET api/urls
 router.get("/subcategories", (req, res) => {
   Subcategories.find().then(subcategory => res.json(subcategory));
+});
+
+// @route GET api/urls
+router.get("/subsubcategories/:subcategory", (req, res) => {
+  Subsubcategories.find({
+    parentCategory: req.params.subcategory
+  }).then(subsubcategoriesFromDB => res.json(subsubcategoriesFromDB));
 });
 
 // @route POST api/urls

@@ -10,7 +10,7 @@ class WholePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: ""
+      category: "Bauen"
     };
   }
 

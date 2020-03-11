@@ -8,18 +8,16 @@ const SubsubcategoriesSchema = new Schema({
     type: String,
     required: true
   },
-  subcats: [
-    {
-      name: {
-        type: String,
-        required: true
-      },
-      url: {
-        type: String,
-        required: true
-      }
+  subsubcat: {
+    name: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
     }
-  ]
+  }
 });
 
 module.exports = Subsubcategories = mongoose.model(
