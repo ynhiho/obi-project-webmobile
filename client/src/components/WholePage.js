@@ -23,6 +23,7 @@ class WholePage extends Component {
       <div>
         <TopBar />
         <AppNavbar clickedCategory={category => this.setCategory(category)} />
+        {/* <CategoryPage category={this.state.category} /> */}
         <Router>
           <div>
             <Route
