@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./SubCatDetails.css";
 
 class SubCatDetails extends Component {
@@ -24,9 +25,6 @@ class SubCatDetails extends Component {
 
   render() {
     const subcats = this.state.subsubcategories;
-    if (subcats[0] !== undefined) {
-      console.log(subcats[0].subsubcat.name);
-    }
 
     return (
       <Container className="container-details">
@@ -36,19 +34,37 @@ class SubCatDetails extends Component {
           <Col>
             <ul className="list-subcat">
               <li>
-                <a href="/products">
+                <Link
+                  to={{
+                    pathname: "/products",
+                    state:
+                      subcats[0] !== undefined ? subcats[0].subsubcat.name : ""
+                  }}
+                >
                   {subcats[0] !== undefined ? subcats[0].subsubcat.name : ""}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/products">
+                <Link
+                  to={{
+                    pathname: "/products",
+                    state:
+                      subcats[1] !== undefined ? subcats[1].subsubcat.name : ""
+                  }}
+                >
                   {subcats[0] !== undefined ? subcats[1].subsubcat.name : ""}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/products">
+                <Link
+                  to={{
+                    pathname: "/products",
+                    state:
+                      subcats[2] !== undefined ? subcats[2].subsubcat.name : ""
+                  }}
+                >
                   {subcats[0] !== undefined ? subcats[2].subsubcat.name : ""}
-                </a>
+                </Link>
               </li>
               <li>Mehr anzeigen ></li>
             </ul>

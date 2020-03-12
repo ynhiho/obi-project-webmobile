@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-var Crawler = require("crawler");
 
 // URL Model
 const Category = require("../../models/Category");
 const Subcategories = require("../../models/Subcategories");
 const Subsubcategories = require("../../models/Subsubcategories");
+const Product = require("../../models/Product");
 
 // @route GET api/urls
 router.get("/", (req, res) => {
@@ -22,6 +22,13 @@ router.get("/subsubcategories/:subcategory", (req, res) => {
   Subsubcategories.find({
     parentCategory: req.params.subcategory
   }).then(subsubcategoriesFromDB => res.json(subsubcategoriesFromDB));
+});
+
+// @route GET api/urls
+router.get("/allproducts/:subsubcategory", (req, res) => {
+  Subsubcategories.find({
+    parentCategory: req.params.subsubcategory
+  }).then(productsFromDB => res.json(productsFromDB));
 });
 
 // @route POST api/urls

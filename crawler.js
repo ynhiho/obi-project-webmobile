@@ -182,7 +182,7 @@ function setProducts($) {
     const product = {
       parentCategory: getProductParentCategory($),
       name: productName,
-      bild: "",
+      image: "",
       price: "",
       rating: "",
       availableOnline: Math.round(Math.random()),
@@ -209,7 +209,7 @@ function setProducts($) {
     }
 
     for (let i = 0; i < helper.length; i++) {
-      helper[i].bild = images[i];
+      helper[i].image = images[i];
     }
   });
 

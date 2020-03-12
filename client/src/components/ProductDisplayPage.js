@@ -11,7 +11,7 @@ class ProductDisplayPage extends Component {
           <ProductList />
         </Col>
         <Col className="col-md-9 mt-5 pr-5">
-          <ProductsDisplay />
+          <ProductsDisplay category={this.props.location.state} />
         </Col>
       </Row>
     );

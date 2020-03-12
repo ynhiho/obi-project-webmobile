@@ -8,7 +8,9 @@ class ProductDisplay extends Component {
   render() {
     return (
       <Container>
-        <h3 className="title-category-prdocut-display">Category</h3>
+        <h3 className="title-category-prdocut-display">
+          {this.props.category}
+        </h3>
         <hr />
         <SortingBar />
         <Row className="mt-2">
