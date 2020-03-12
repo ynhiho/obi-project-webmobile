@@ -26,7 +26,7 @@ router.get("/subsubcategories/:subcategory", (req, res) => {
 
 // @route GET api/urls
 router.get("/allproducts/:subsubcategory", (req, res) => {
-  Subsubcategories.find({
+  Product.find({
     parentCategory: req.params.subsubcategory
   }).then(productsFromDB => res.json(productsFromDB));
 });
