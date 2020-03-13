@@ -9,6 +9,7 @@ import {
   NavLink,
   Container
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import "./AppNavbar.css";
 
 class AppNavbar extends Component {
@@ -51,7 +52,13 @@ class AppNavbar extends Component {
                     className="main-nav-items"
                     onClick={() => this.shareClickedCategory(category.name)}
                   >
-                    <NavLink>{category.name}</NavLink>
+                    <Link
+                      to={{
+                        pathname: "/"
+                      }}
+                    >
+                      <NavLink>{category.name}</NavLink>
+                    </Link>
                   </NavItem>
                 ))}
                 <NavItem className="main-nav-items">

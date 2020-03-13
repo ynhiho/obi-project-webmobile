@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProductList from "./ProductList";
+import SubcategoryList from "./SubcategoryList";
 import ProductsDisplay from "./ProductsDisplay";
 
 class ProductDisplayPage extends Component {
@@ -8,10 +8,13 @@ class ProductDisplayPage extends Component {
     return (
       <Row>
         <Col className="col-md-3">
-          <ProductList />
+          <SubcategoryList
+            subcategory={this.props.location.subcat}
+            subsubcategory={this.props.location.state}
+          />
         </Col>
         <Col className="col-md-9 mt-5 pr-5">
-          <ProductsDisplay category={this.props.location.state} />
+          <ProductsDisplay subsubcategory={this.props.location.state} />
         </Col>
       </Row>
     );

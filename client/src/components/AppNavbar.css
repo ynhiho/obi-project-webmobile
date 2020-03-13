@@ -7,3 +7,7 @@
 .main-nav-items {
   cursor: pointer;
 }
+
+.main-nav-items a {
+  text-decoration: none !important;
+}

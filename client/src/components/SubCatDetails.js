@@ -35,10 +35,13 @@ class SubCatDetails extends Component {
             <ul className="list-subcat">
               <li>
                 <Link
+                  className="a-subsubcat"
                   to={{
                     pathname: "/products",
                     state:
-                      subcats[0] !== undefined ? subcats[0].subsubcat.name : ""
+                      subcats[0] !== undefined ? subcats[0].subsubcat.name : "",
+                    subcat:
+                      subcats[0] !== undefined ? subcats[0].parentCategory : ""
                   }}
                 >
                   {subcats[0] !== undefined ? subcats[0].subsubcat.name : ""}
@@ -46,10 +49,13 @@ class SubCatDetails extends Component {
               </li>
               <li>
                 <Link
+                  className="a-subsubcat"
                   to={{
                     pathname: "/products",
                     state:
-                      subcats[1] !== undefined ? subcats[1].subsubcat.name : ""
+                      subcats[1] !== undefined ? subcats[1].subsubcat.name : "",
+                    subcat:
+                      subcats[0] !== undefined ? subcats[0].parentCategory : ""
                   }}
                 >
                   {subcats[0] !== undefined ? subcats[1].subsubcat.name : ""}
@@ -57,10 +63,13 @@ class SubCatDetails extends Component {
               </li>
               <li>
                 <Link
+                  className="a-subsubcat"
                   to={{
                     pathname: "/products",
                     state:
-                      subcats[2] !== undefined ? subcats[2].subsubcat.name : ""
+                      subcats[2] !== undefined ? subcats[2].subsubcat.name : "",
+                    subcat:
+                      subcats[0] !== undefined ? subcats[0].parentCategory : ""
                   }}
                 >
                   {subcats[0] !== undefined ? subcats[2].subsubcat.name : ""}

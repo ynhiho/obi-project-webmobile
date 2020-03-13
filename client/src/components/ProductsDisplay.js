@@ -14,7 +14,7 @@ class ProductDisplay extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/urls/allproducts/" + this.props.category)
+    fetch("/api/urls/allproducts/" + this.props.subsubcategory)
       .then(res => res.json())
       .then(productsFromDB => {
         this.setState({ products: productsFromDB });
@@ -61,12 +61,11 @@ class ProductDisplay extends Component {
 
   render() {
     let products = this.packagingProducts();
-    console.log(products);
 
     return (
       <Container>
         <h3 className="title-category-prdocut-display">
-          {this.props.category}
+          {this.props.subsubcategory}
         </h3>
         <hr />
         <SortingBar />
