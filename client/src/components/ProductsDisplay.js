@@ -9,7 +9,7 @@ class ProductDisplay extends Component {
     super(props);
     this.state = {
       products: [],
-      productsPack: []
+      packagedProducts: []
     };
   }
 
@@ -21,42 +21,48 @@ class ProductDisplay extends Component {
       });
   }
 
-  /* areProductsleft = () => {
-    if (this.state.products.length >= 4) {
-      let currentproduct = {};
-      let productsFour = [];
-      currentproduct = this.state.products.shift();
-      productsFour.push(currentproduct);
-      currentproduct = this.state.products.shift();
-      productsFour.push(currentproduct);
-      currentproduct = this.state.products.shift();
-      productsFour.push(currentproduct);
-      currentproduct = this.state.products.shift();
-      productsFour.push(currentproduct);
-      this.setState({ productsPack: productsFour });
-      return true;
-    } else {
-      return false;
+  packagingProducts = () => {
+    let products = this.state.products;
+    let productBundle = [];
+    let bundledProducts = [];
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      if (productBundle.length < 4) {
+        productBundle.push(product);
+      } else {
+        bundledProducts.push({
+          product: productBundle[0],
+          product2: productBundle[1],
+          product3: productBundle[2],
+          product4: productBundle[3]
+        });
+        productBundle = [];
+        productBundle.push(product);
+      }
     }
-  }; */
 
-  /*   getProducts = () => {
-    let currentproduct = {};
-    let fourProducts = [];
+    return bundledProducts;
 
-    currentproduct = this.state.products.shift();
-    fourProducts.push(currentproduct);
-    currentproduct = this.state.products.shift();
-    fourProducts.push(currentproduct);
-    currentproduct = this.state.products.shift();
-    fourProducts.push(currentproduct);
-    currentproduct = this.state.products.shift();
-    fourProducts.push(currentproduct);
+    /*     this.state.products.map(product => {
+      let packagedProductsAll = [];
+      let packagedProductsFour = [];
 
-    return fourProducts;
-  }; */
+      if (packagedProductsFour.length < 4) {
+        packagedProductsFour.push(product);
+      } else {
+        packagedProductsAll.push(packagedProductsFour);
+        packagedProductsFour = [];
+        packagedProductsFour.push(product);
+      }
+
+      
+    }); */
+  };
 
   render() {
+    let products = this.packagingProducts();
+    console.log(products);
+
     return (
       <Container>
         <h3 className="title-category-prdocut-display">
@@ -64,18 +70,48 @@ class ProductDisplay extends Component {
         </h3>
         <hr />
         <SortingBar />
-        {this.state.products.map(
-          ({ name, image, price, rating, availableOnline, availableStore }) => (
-            <ProductRow
-              image={image}
-              price={price}
-              rating={rating}
-              name={name}
-              availableOnline={availableOnline}
-              availableStore={availableStore}
-            />
-          )
-        )}
+        {products[0] !== undefined
+          ? products.map(({ product, product2, product3, product4 }) => (
+              <ProductRow
+                image={[
+                  product.image,
+                  product2.image,
+                  product3.image,
+                  product4.image
+                ]}
+                price={[
+                  product.price,
+                  product2.price,
+                  product3.price,
+                  product4.price
+                ]}
+                rating={[
+                  product.rating,
+                  product2.rating,
+                  product3.rating,
+                  product4.rating
+                ]}
+                name={[
+                  product.name,
+                  product2.name,
+                  product3.name,
+                  product4.name
+                ]}
+                availableOnline={[
+                  product.availableOnline,
+                  product2.availableOnline,
+                  product3.availableOnline,
+                  product4.availableOnline
+                ]}
+                availableStore={[
+                  product.availableStore,
+                  product2.availableStore,
+                  product3.availableStore,
+                  product4.availableStore
+                ]}
+              />
+            ))
+          : ""}
       </Container>
     );
   }
