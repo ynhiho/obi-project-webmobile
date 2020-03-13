@@ -19,14 +19,19 @@ class SubcategoryList extends Component {
   }
 
   render() {
+    let sortedNames = [];
+    this.state.subcategories.map(subcategory => {
+      sortedNames.push(subcategory.subsubcat.name);
+    });
+    sortedNames = [...new Set(sortedNames)];
+    sortedNames.sort();
+
     return (
       <ul className="subsubcategory-list">
         <li>{this.props.subsubcategory}</li>
-        {this.state.subcategories.map(subcategory =>
-          subcategory.subsubcat.name.localeCompare(
-            this.props.subsubcategory
-          ) !== 0 ? (
-            <li> {subcategory.subsubcat.name} </li>
+        {sortedNames.map(name =>
+          name.localeCompare(this.props.subsubcategory) !== 0 ? (
+            <li> {name} </li>
           ) : (
             ""
           )
