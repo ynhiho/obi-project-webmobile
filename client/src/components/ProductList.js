@@ -40,7 +40,7 @@ class ProductList extends Component {
     return (
       <ul className="productlist">
         {this.mapSubcategories().map(subcategory => (
-          <li> {subcategory} </li>
+          <li>{subcategory}</li>
         ))}
       </ul>
     );

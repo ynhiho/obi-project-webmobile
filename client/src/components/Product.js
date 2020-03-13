@@ -23,7 +23,11 @@ class Product extends Component {
                   <span className="availability-text ml-1">Bestellbar</span>
                 </Row>
               ) : (
-                ""
+                <Col className="mr-3 mt-2">
+                  <Row>
+                    <span className="availability-text"></span>
+                  </Row>
+                </Col>
               )}
             </Col>
             {this.props.availableStore ? (
@@ -34,7 +38,11 @@ class Product extends Component {
                 </Row>
               </Col>
             ) : (
-              ""
+              <Col className="mr-3 mt-2">
+                <Row>
+                  <span className="availability-text"></span>
+                </Row>
+              </Col>
             )}
           </Row>
           <CardImg

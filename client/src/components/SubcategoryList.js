@@ -31,7 +31,7 @@ class SubcategoryList extends Component {
         <li>{this.props.subsubcategory}</li>
         {sortedNames.map(name =>
           name.localeCompare(this.props.subsubcategory) !== 0 ? (
-            <li> {name} </li>
+            <li>{name}</li>
           ) : (
             ""
           )

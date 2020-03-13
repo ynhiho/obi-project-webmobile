@@ -15,3 +15,13 @@ li {
   font-size: 0.9rem;
   line-height: 1.8;
 }
+
+li {
+  text-decoration: none !important;
+  color: black;
+  cursor: pointer;
+}
+
+li:hover {
+  color: #ff7e21;
+}

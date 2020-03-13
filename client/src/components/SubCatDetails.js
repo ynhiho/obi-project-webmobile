@@ -8,7 +8,8 @@ class SubCatDetails extends Component {
     super(props);
     this.state = {
       subsubcategories: [],
-      clickedCategory: "Bauen"
+      clickedCategory: "Bauen",
+      image: ""
     };
   }
 
@@ -19,6 +20,11 @@ class SubCatDetails extends Component {
         .then(res => res.json())
         .then(subsubcategoriesFromDB => {
           this.setState({ subsubcategories: subsubcategoriesFromDB });
+        });
+      fetch("/api/urls/subcategoryimage/" + this.props.subcategoryName)
+        .then(res => res.json())
+        .then(imageFromDb => {
+          this.setState({ image: imageFromDb[0].image });
         });
     }
   }
@@ -78,9 +84,7 @@ class SubCatDetails extends Component {
               <li>Mehr anzeigen ></li>
             </ul>
           </Col>
-          <Col>
-            <Image src="/pics/placeholder-furniture.jpg" />
-          </Col>
+          <Col>{<Image src={this.state.image} width="90px" />}</Col>
         </Row>
       </Container>
     );
